@@ -1,0 +1,15 @@
+.curved {
+    border-radius: 10px !important;
+}
+.curved h5, .curved h4{
+    color: #363642 !important;
+}
+.a-text {
+    font-size: 1rem;
+}
+header button span{
+    color: #222230; 
+}
+.nav-item .nav-link span{
+    color: #222230;
+}
