@@ -93,6 +93,7 @@
                     $response = array(
                         "success" => true,
                         "data" => array(
+                            "product_image" => $row['product_image'],
                             "brand_name" => $row['brand_name'],
                             "generic_name" => $row['generic_name'],
                             "category" => $row['category'],

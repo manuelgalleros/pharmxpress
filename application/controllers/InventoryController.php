@@ -1,10 +1,15 @@
 <?php
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 
     class InventoryController extends CI_Controller {
+        
+        public function __construct() {
+        parent::__construct();
+        $this->load->model('Inventory_model');
+    }
 
         public function index() {
-            $this->load->model('Inventory_model');
             $products = $this->Inventory_model->viewAllProducts();
             $numOfTotalProducts = $this->Inventory_model->getNumOfTotalProducts();
             $numOfLowProducts = $this->Inventory_model->getNumOfLowProducts();
@@ -17,7 +22,6 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
    
         
         public function importData() {
-            $this->load->model('Inventory_model');
 
             // Check if a file was uploaded
             if (isset($_FILES['files']['name'][0]) && $_FILES['files']['name'][0] != '') {
@@ -67,6 +71,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
                 echo json_encode(['files' => [['error' => 'No file uploaded.']]]);
             }
         }
+
         
         
         public function addProduct() {
